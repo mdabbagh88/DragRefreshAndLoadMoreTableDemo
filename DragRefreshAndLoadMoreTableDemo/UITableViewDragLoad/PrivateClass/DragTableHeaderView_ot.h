@@ -7,6 +7,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+#define REFRESH_TRIGGER_HEIGHT              (-60.0f)
+
 @class DragTableHeaderView_ot;
 
 @protocol DragTableHeaderDelegate_ot

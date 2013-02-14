@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+#define LOADMORE_TRIGGER_HEIGHT              (44.0f)
+
 @class DragTableFooterView_ot;
 
 @protocol DragTableFooterDelegate_ot

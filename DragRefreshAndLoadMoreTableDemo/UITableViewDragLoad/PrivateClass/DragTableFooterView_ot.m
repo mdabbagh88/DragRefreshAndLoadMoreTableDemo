@@ -11,7 +11,6 @@
 
 #define TEXT_COLOR                          [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0]
 #define FLIP_ANIMATION_DURATION             (0.18f)
-#define REFRESH_TRIGGER_HEIGHT              (44.0f)
 
 @implementation DragTableFooterView_ot
 {
@@ -88,11 +87,11 @@
     if (_state != DragTableDragStateLoading_ot && scrollView.isDragging)
     {
 		BOOL _loading = _isLoading;
-		if (_state == DragTableDragStatePulling_ot && [self footerVisbleHeightInScrollView:scrollView] < REFRESH_TRIGGER_HEIGHT && !_loading)
+		if (_state == DragTableDragStatePulling_ot && [self footerVisbleHeightInScrollView:scrollView] < LOADMORE_TRIGGER_HEIGHT && !_loading)
         {
 			[self setState:DragTableDragStateNormal_ot];
 		}
-        else if (_state == DragTableDragStateNormal_ot && [self footerVisbleHeightInScrollView:scrollView] > REFRESH_TRIGGER_HEIGHT && !_loading)
+        else if (_state == DragTableDragStateNormal_ot && [self footerVisbleHeightInScrollView:scrollView] > LOADMORE_TRIGGER_HEIGHT && !_loading)
         {
 			[self setState:DragTableDragStatePulling_ot];
 		}
@@ -103,7 +102,7 @@
 {
 	BOOL _loading = _isLoading;
     CGFloat footerVisibleHeight = [self footerVisbleHeightInScrollView:scrollView];
-	if (footerVisibleHeight >= REFRESH_TRIGGER_HEIGHT && !_loading)
+	if (footerVisibleHeight >= LOADMORE_TRIGGER_HEIGHT && !_loading)
     {
 		if ([_delegate respondsToSelector:@selector(dragTableFooterDidTriggerLoadMore:)])
         {
@@ -116,14 +115,14 @@
         contentInsetHeightAdder = MAX(0, contentInsetHeightAdder);
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.2];
-		scrollView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, REFRESH_TRIGGER_HEIGHT + contentInsetHeightAdder, 0.0f);
+		scrollView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, LOADMORE_TRIGGER_HEIGHT + contentInsetHeightAdder, 0.0f);
 		[UIView commitAnimations];
 	}
 }
 
 - (void)triggerLoading:(UIScrollView *)scrollView
 {
-    [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, REFRESH_TRIGGER_HEIGHT)];
+    [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, LOADMORE_TRIGGER_HEIGHT)];
     [self dragTableDidEndDragging:scrollView];
 }
 
