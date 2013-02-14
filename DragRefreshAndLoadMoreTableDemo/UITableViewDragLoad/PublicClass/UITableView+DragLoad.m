@@ -90,6 +90,12 @@
 
 - (void)dragTableFrameWillChangeTo:(CGRect)contentOffset observer:(DragTableGestureObserver_ot *)observer
 {
+    if (self.dragFooterView.isLoading)
+    {
+        CGFloat contentInsetHeightAdder = self.frame.size.height - self.contentSize.height;
+        contentInsetHeightAdder = MAX(0, contentInsetHeightAdder);
+        self.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, LOADMORE_TRIGGER_HEIGHT + contentInsetHeightAdder, 0.0f);
+    }
     CGFloat dragFooterMinY = MAX(self.contentOffset.y, self.frame.size.height);
     self.dragFooterView.frame = CGRectMake(0, dragFooterMinY, self.frame.size.width, self.bounds.size.height);
 }
