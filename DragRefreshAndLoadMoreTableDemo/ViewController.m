@@ -9,7 +9,25 @@
 #import "ViewController.h"
 #import "UITableView+DragLoad.h"
 
-@interface ViewController ()<UITableViewDragLoadDelegate,UITableViewDataSource>
+@class FrameObservingView;
+
+@protocol FrameObservingViewDelegate <NSObject>
+- (void)frameObservingViewFrameChanged:(FrameObservingView *)view;
+@end
+
+@interface FrameObservingView : UIView
+@property (nonatomic,assign) id<FrameObservingViewDelegate>delegate;
+@end
+
+@implementation FrameObservingView
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    [self.delegate frameObservingViewFrameChanged:self];
+}
+@end
+
+@interface ViewController ()<UITableViewDragLoadDelegate,UITableViewDataSource,FrameObservingViewDelegate>
 {
     UITableView *_tableView;
 }
@@ -17,9 +35,19 @@
 
 @implementation ViewController
 
+- (void)frameObservingViewFrameChanged:(FrameObservingView *)view
+{
+    _tableView.frame = self.view.bounds;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    FrameObservingView *frameObservingView = [[FrameObservingView alloc] init];
+    frameObservingView.delegate = self;
+    self.view = frameObservingView;
+    
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.frame = CGRectMake(0, 0, 320, 460);
     _tableView.dataSource = self;
