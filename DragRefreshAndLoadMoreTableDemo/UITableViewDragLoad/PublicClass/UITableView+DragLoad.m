@@ -82,9 +82,9 @@
     }
 }
 
-- (void)dragTableContentSizeWillChangeTo:(CGPoint)contentOffset observer:(DragTableGestureObserver_ot *)observer
+- (void)dragTableContentSizeWillChangeTo:(CGSize)contentSize observer:(DragTableGestureObserver_ot *)observer
 {
-    CGFloat dragFooterMinY = MAX(contentOffset.y, self.frame.size.height);
+    CGFloat dragFooterMinY = MAX(contentSize.height, self.frame.size.height);
     self.dragFooterView.frame = CGRectMake(0, dragFooterMinY, self.frame.size.width, self.bounds.size.height);
 }
 
@@ -96,7 +96,7 @@
         contentInsetHeightAdder = MAX(0, contentInsetHeightAdder);
         self.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, LOADMORE_TRIGGER_HEIGHT + contentInsetHeightAdder, 0.0f);
     }
-    CGFloat dragFooterMinY = MAX(self.contentOffset.y, self.frame.size.height);
+    CGFloat dragFooterMinY = MAX(self.contentSize.height, self.frame.size.height);
     self.dragFooterView.frame = CGRectMake(0, dragFooterMinY, self.frame.size.width, self.bounds.size.height);
 }
 

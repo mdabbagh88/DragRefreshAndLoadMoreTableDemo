@@ -56,10 +56,10 @@
     else if ([keyPath isEqualToString:@"contentSize"])
     {
         NSValue *pointValue = change[@"new"];
-        CGPoint point = [pointValue CGPointValue];
+        CGSize contentSize = [pointValue CGSizeValue];
         if ([_delegate respondsToSelector:@selector(dragTableContentSizeWillChangeTo:observer:)])
         {
-            [_delegate dragTableContentSizeWillChangeTo:point observer:self];
+            [_delegate dragTableContentSizeWillChangeTo:contentSize observer:self];
         }
     }
     else if ([keyPath isEqualToString:@"frame"])

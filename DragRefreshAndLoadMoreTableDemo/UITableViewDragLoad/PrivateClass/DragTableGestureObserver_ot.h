@@ -14,7 +14,7 @@
 
 - (void)dragTableGestureStateWillChangeTo:(UIGestureRecognizerState)state observer:(DragTableGestureObserver_ot *)observer;
 - (void)dragTableContentOffsetWillChangeTo:(CGPoint)contentOffset observer:(DragTableGestureObserver_ot *)observer;
-- (void)dragTableContentSizeWillChangeTo:(CGPoint)contentOffset observer:(DragTableGestureObserver_ot *)observer;
+- (void)dragTableContentSizeWillChangeTo:(CGSize)contentSize observer:(DragTableGestureObserver_ot *)observer;
 - (void)dragTableFrameWillChangeTo:(CGRect)contentOffset observer:(DragTableGestureObserver_ot *)observer;
 
 @end
