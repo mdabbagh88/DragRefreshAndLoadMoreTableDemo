@@ -9,7 +9,7 @@
 
 #define TEXT_COLOR                          [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0]
 #define FLIP_ANIMATION_DURATION             (0.18f)
-#define DATE_PERMANENT_STORAGE_KEY_PREFIX   @"RragRefreshTableHeaderView_ot_LastRefresh"
+#define DATE_PERMANENT_STORAGE_KEY_PREFIX   @"DragRefreshTableHeaderView_ot_LastRefresh"
 
 @implementation DragTableHeaderView_ot
 {
