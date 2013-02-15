@@ -16,7 +16,7 @@
 
 //When trigger a load more event, refresh will be canceled. Then this method will be called.
 //Cancel operations(Network requests, etc.) related to refresh in this method.
-- (void)dragTableRefreshCanceled:(UITableView *)tableView;//When trigger a load more event, refresh will be canceled
+- (void)dragTableRefreshCanceled:(UITableView *)tableView;
 
 //Called when table trigger a load more event.
 - (void)dragTableDidTriggerLoadMore:(UITableView *)tableView;
