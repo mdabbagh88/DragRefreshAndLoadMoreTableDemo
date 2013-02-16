@@ -96,6 +96,8 @@
         contentInsetHeightAdder = MAX(0, contentInsetHeightAdder);
         self.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, LOADMORE_TRIGGER_HEIGHT + contentInsetHeightAdder, 0.0f);
     }
+    
+    self.dragHeaderView.frame = CGRectMake(0.0f, 0.0f - self.bounds.size.height, self.frame.size.width, self.bounds.size.height);
     CGFloat dragFooterMinY = MAX(self.contentSize.height, self.frame.size.height);
     self.dragFooterView.frame = CGRectMake(0, dragFooterMinY, self.frame.size.width, self.bounds.size.height);
 }
@@ -156,7 +158,6 @@
         CGRect frame = CGRectMake(0.0f, 0.0f - self.bounds.size.height, self.frame.size.width, self.bounds.size.height);
         self.dragFooterView = [[DragTableFooterView_ot alloc] initWithFrame:frame];
         self.dragFooterView.delegate = self;
-        self.dragFooterView.frame = CGRectMake(0, self.contentOffset.y, self.frame.size.width, 44.0f);
         [self addSubview:self.dragFooterView];
     }
     if (!self.gestureObserver)
