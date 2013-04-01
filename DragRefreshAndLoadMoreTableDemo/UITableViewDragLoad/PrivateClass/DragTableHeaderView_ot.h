@@ -29,6 +29,8 @@
 - (void)dragTableDidEndDragging:(UIScrollView *)scrollView;
 
 - (void)triggerLoading:(UIScrollView *)scrollView;
+
+//Prevent animation conflict when loadmore triggerd. Pass `NO` to `shouldChangeContentInset` when loadmore triggered.
 - (void)endLoading:(UIScrollView *)scrollView shouldUpdateRefreshDate:(BOOL)shouldUpdate shouldChangeContentInset:(BOOL)shouldChangeContentInset;
 
 @end

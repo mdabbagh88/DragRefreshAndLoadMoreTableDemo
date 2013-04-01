@@ -126,20 +126,37 @@
     [self dragTableDidEndDragging:scrollView];
 }
 
+//Prevent animation conflict when refresh triggerd. Pass `NO` to `shouldChangeContentInset` when refresh triggered.
 - (void)endLoading:(UIScrollView *)scrollView shouldChangeContentInset:(BOOL)shouldChangeContentInset
 {
     if (_isLoading)
     {
         if (shouldChangeContentInset)
         {
-            [UIView beginAnimations:nil context:NULL];
-            [UIView setAnimationDuration:0.3];
-            [scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
-            [UIView commitAnimations];
+            NSString *edgeInsetString = NSStringFromUIEdgeInsets(UIEdgeInsetsZero);
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 scrollView, @"scrollView",
+                                 edgeInsetString, @"edgeInset",
+                                 nil];
+            [self performSelector:@selector(setScrollViewContentInset:) withObject:dic afterDelay:0];
         }
         _isLoading = NO;
     }
 	[self setState:DragTableDragStateNormal_ot];
+}
+
+//For set `contentInset` with delay usage.
+//Prevent call [table reloadData] and `endLoading:shouldChangeContentInset:` at the same runloop.
+//If [table reloadData] and [table setContentInset"] at the same runloop, `contentOffset` behaves strangely.
+- (void)setScrollViewContentInset:(NSDictionary *)dic
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    UIScrollView *scrollView = dic[@"scrollView"];
+    NSString *edgeInsetString = dic[@"edgeInset"];
+    UIEdgeInsets edgeInset = UIEdgeInsetsFromString(edgeInsetString);
+    [scrollView setContentInset:edgeInset];
+    [UIView commitAnimations];
 }
 
 @end

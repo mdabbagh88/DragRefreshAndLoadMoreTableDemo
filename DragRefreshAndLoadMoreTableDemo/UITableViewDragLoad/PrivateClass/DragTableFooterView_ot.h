@@ -28,6 +28,8 @@
 - (void)dragTableDidEndDragging:(UIScrollView *)scrollView;
 
 - (void)triggerLoading:(UIScrollView *)scrollView;
+
+//Prevent animation conflict when refresh triggerd. Pass `NO` to `shouldChangeContentInset` when refresh triggered.
 - (void)endLoading:(UIScrollView *)scrollView shouldChangeContentInset:(BOOL)shouldChangeContentInset;
 
 @end
