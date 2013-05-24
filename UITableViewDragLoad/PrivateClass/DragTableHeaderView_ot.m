@@ -183,6 +183,7 @@
 		[self setState:DragTableDragStateLoading_ot];
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.2];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 		scrollView.contentInset = UIEdgeInsetsMake(-REFRESH_TRIGGER_HEIGHT, 0.0f, 0.0f, 0.0f);
 		[UIView commitAnimations];
 	}
