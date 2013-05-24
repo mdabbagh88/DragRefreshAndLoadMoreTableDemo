@@ -17,14 +17,14 @@
 		423ED6B516CD4A9E00CB4B3E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 423ED6B416CD4A9E00CB4B3E /* Default@2x.png */; };
 		423ED6B716CD4A9E00CB4B3E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 423ED6B616CD4A9E00CB4B3E /* Default-568h@2x.png */; };
 		423ED6BA16CD4A9E00CB4B3E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 423ED6B916CD4A9E00CB4B3E /* ViewController.m */; };
-		423ED6D416CD4AD900CB4B3E /* DragTableFooterView_ot.m in Sources */ = {isa = PBXBuildFile; fileRef = 423ED6C716CD4AD900CB4B3E /* DragTableFooterView_ot.m */; };
-		423ED6D516CD4AD900CB4B3E /* DragTableGestureObserver_ot.m in Sources */ = {isa = PBXBuildFile; fileRef = 423ED6C916CD4AD900CB4B3E /* DragTableGestureObserver_ot.m */; };
-		423ED6D616CD4AD900CB4B3E /* DragTableHeaderView_ot.m in Sources */ = {isa = PBXBuildFile; fileRef = 423ED6CB16CD4AD900CB4B3E /* DragTableHeaderView_ot.m */; };
-		423ED6D716CD4AD900CB4B3E /* UIScrollView+DragTableSafeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 423ED6CD16CD4AD900CB4B3E /* UIScrollView+DragTableSafeAnimation.m */; };
-		423ED6D816CD4AD900CB4B3E /* UITableView+DragLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 423ED6D016CD4AD900CB4B3E /* UITableView+DragLoad.m */; };
-		423ED6D916CD4AD900CB4B3E /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 423ED6D216CD4AD900CB4B3E /* blueArrow.png */; };
-		423ED6DA16CD4AD900CB4B3E /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 423ED6D316CD4AD900CB4B3E /* blueArrow@2x.png */; };
 		423ED6DC16CD4B2400CB4B3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423ED6DB16CD4B2400CB4B3E /* QuartzCore.framework */; };
+		4252940B174F607F0020AD39 /* DragTableFooterView_ot.m in Sources */ = {isa = PBXBuildFile; fileRef = 425293FE174F607F0020AD39 /* DragTableFooterView_ot.m */; };
+		4252940C174F607F0020AD39 /* DragTableGestureObserver_ot.m in Sources */ = {isa = PBXBuildFile; fileRef = 42529400174F607F0020AD39 /* DragTableGestureObserver_ot.m */; };
+		4252940D174F607F0020AD39 /* DragTableHeaderView_ot.m in Sources */ = {isa = PBXBuildFile; fileRef = 42529402174F607F0020AD39 /* DragTableHeaderView_ot.m */; };
+		4252940E174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42529404174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.m */; };
+		4252940F174F607F0020AD39 /* UITableView+DragLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 42529407174F607F0020AD39 /* UITableView+DragLoad.m */; };
+		42529410174F607F0020AD39 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 42529409174F607F0020AD39 /* blueArrow.png */; };
+		42529411174F607F0020AD39 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4252940A174F607F0020AD39 /* blueArrow@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,20 +43,20 @@
 		423ED6B616CD4A9E00CB4B3E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		423ED6B816CD4A9E00CB4B3E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		423ED6B916CD4A9E00CB4B3E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		423ED6C516CD4AD900CB4B3E /* DragTableDragState_ot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragTableDragState_ot.h; sourceTree = "<group>"; };
-		423ED6C616CD4AD900CB4B3E /* DragTableFooterView_ot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragTableFooterView_ot.h; sourceTree = "<group>"; };
-		423ED6C716CD4AD900CB4B3E /* DragTableFooterView_ot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragTableFooterView_ot.m; sourceTree = "<group>"; };
-		423ED6C816CD4AD900CB4B3E /* DragTableGestureObserver_ot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragTableGestureObserver_ot.h; sourceTree = "<group>"; };
-		423ED6C916CD4AD900CB4B3E /* DragTableGestureObserver_ot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragTableGestureObserver_ot.m; sourceTree = "<group>"; };
-		423ED6CA16CD4AD900CB4B3E /* DragTableHeaderView_ot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragTableHeaderView_ot.h; sourceTree = "<group>"; };
-		423ED6CB16CD4AD900CB4B3E /* DragTableHeaderView_ot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragTableHeaderView_ot.m; sourceTree = "<group>"; };
-		423ED6CC16CD4AD900CB4B3E /* UIScrollView+DragTableSafeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DragTableSafeAnimation.h"; sourceTree = "<group>"; };
-		423ED6CD16CD4AD900CB4B3E /* UIScrollView+DragTableSafeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DragTableSafeAnimation.m"; sourceTree = "<group>"; };
-		423ED6CF16CD4AD900CB4B3E /* UITableView+DragLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+DragLoad.h"; sourceTree = "<group>"; };
-		423ED6D016CD4AD900CB4B3E /* UITableView+DragLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DragLoad.m"; sourceTree = "<group>"; };
-		423ED6D216CD4AD900CB4B3E /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
-		423ED6D316CD4AD900CB4B3E /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
 		423ED6DB16CD4B2400CB4B3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		425293FC174F607F0020AD39 /* DragTableDragState_ot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragTableDragState_ot.h; sourceTree = "<group>"; };
+		425293FD174F607F0020AD39 /* DragTableFooterView_ot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragTableFooterView_ot.h; sourceTree = "<group>"; };
+		425293FE174F607F0020AD39 /* DragTableFooterView_ot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragTableFooterView_ot.m; sourceTree = "<group>"; };
+		425293FF174F607F0020AD39 /* DragTableGestureObserver_ot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragTableGestureObserver_ot.h; sourceTree = "<group>"; };
+		42529400174F607F0020AD39 /* DragTableGestureObserver_ot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragTableGestureObserver_ot.m; sourceTree = "<group>"; };
+		42529401174F607F0020AD39 /* DragTableHeaderView_ot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragTableHeaderView_ot.h; sourceTree = "<group>"; };
+		42529402174F607F0020AD39 /* DragTableHeaderView_ot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragTableHeaderView_ot.m; sourceTree = "<group>"; };
+		42529403174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DragTableSafeAnimation.h"; sourceTree = "<group>"; };
+		42529404174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DragTableSafeAnimation.m"; sourceTree = "<group>"; };
+		42529406174F607F0020AD39 /* UITableView+DragLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+DragLoad.h"; sourceTree = "<group>"; };
+		42529407174F607F0020AD39 /* UITableView+DragLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DragLoad.m"; sourceTree = "<group>"; };
+		42529409174F607F0020AD39 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		4252940A174F607F0020AD39 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				423ED6DB16CD4B2400CB4B3E /* QuartzCore.framework */,
+				425293FA174F607F0020AD39 /* UITableViewDragLoad */,
 				423ED6A616CD4A9D00CB4B3E /* DragRefreshAndLoadMoreTableDemo */,
 				423ED69F16CD4A9D00CB4B3E /* Frameworks */,
 				423ED69D16CD4A9D00CB4B3E /* Products */,
@@ -109,7 +110,6 @@
 				423ED6B016CD4A9D00CB4B3E /* AppDelegate.m */,
 				423ED6B816CD4A9E00CB4B3E /* ViewController.h */,
 				423ED6B916CD4A9E00CB4B3E /* ViewController.m */,
-				423ED6C316CD4AD900CB4B3E /* UITableViewDragLoad */,
 				423ED6A716CD4A9D00CB4B3E /* Supporting Files */,
 			);
 			path = DragRefreshAndLoadMoreTableDemo;
@@ -129,46 +129,46 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		423ED6C316CD4AD900CB4B3E /* UITableViewDragLoad */ = {
+		425293FA174F607F0020AD39 /* UITableViewDragLoad */ = {
 			isa = PBXGroup;
 			children = (
-				423ED6C416CD4AD900CB4B3E /* PrivateClass */,
-				423ED6CE16CD4AD900CB4B3E /* PublicClass */,
-				423ED6D116CD4AD900CB4B3E /* Resources */,
+				425293FB174F607F0020AD39 /* PrivateClass */,
+				42529405174F607F0020AD39 /* PublicClass */,
+				42529408174F607F0020AD39 /* Resources */,
 			);
 			path = UITableViewDragLoad;
 			sourceTree = "<group>";
 		};
-		423ED6C416CD4AD900CB4B3E /* PrivateClass */ = {
+		425293FB174F607F0020AD39 /* PrivateClass */ = {
 			isa = PBXGroup;
 			children = (
-				423ED6C516CD4AD900CB4B3E /* DragTableDragState_ot.h */,
-				423ED6CA16CD4AD900CB4B3E /* DragTableHeaderView_ot.h */,
-				423ED6CB16CD4AD900CB4B3E /* DragTableHeaderView_ot.m */,
-				423ED6C616CD4AD900CB4B3E /* DragTableFooterView_ot.h */,
-				423ED6C716CD4AD900CB4B3E /* DragTableFooterView_ot.m */,
-				423ED6C816CD4AD900CB4B3E /* DragTableGestureObserver_ot.h */,
-				423ED6C916CD4AD900CB4B3E /* DragTableGestureObserver_ot.m */,
-				423ED6CC16CD4AD900CB4B3E /* UIScrollView+DragTableSafeAnimation.h */,
-				423ED6CD16CD4AD900CB4B3E /* UIScrollView+DragTableSafeAnimation.m */,
+				425293FC174F607F0020AD39 /* DragTableDragState_ot.h */,
+				425293FD174F607F0020AD39 /* DragTableFooterView_ot.h */,
+				425293FE174F607F0020AD39 /* DragTableFooterView_ot.m */,
+				425293FF174F607F0020AD39 /* DragTableGestureObserver_ot.h */,
+				42529400174F607F0020AD39 /* DragTableGestureObserver_ot.m */,
+				42529401174F607F0020AD39 /* DragTableHeaderView_ot.h */,
+				42529402174F607F0020AD39 /* DragTableHeaderView_ot.m */,
+				42529403174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.h */,
+				42529404174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.m */,
 			);
 			path = PrivateClass;
 			sourceTree = "<group>";
 		};
-		423ED6CE16CD4AD900CB4B3E /* PublicClass */ = {
+		42529405174F607F0020AD39 /* PublicClass */ = {
 			isa = PBXGroup;
 			children = (
-				423ED6CF16CD4AD900CB4B3E /* UITableView+DragLoad.h */,
-				423ED6D016CD4AD900CB4B3E /* UITableView+DragLoad.m */,
+				42529406174F607F0020AD39 /* UITableView+DragLoad.h */,
+				42529407174F607F0020AD39 /* UITableView+DragLoad.m */,
 			);
 			path = PublicClass;
 			sourceTree = "<group>";
 		};
-		423ED6D116CD4AD900CB4B3E /* Resources */ = {
+		42529408174F607F0020AD39 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				423ED6D216CD4AD900CB4B3E /* blueArrow.png */,
-				423ED6D316CD4AD900CB4B3E /* blueArrow@2x.png */,
+				42529409174F607F0020AD39 /* blueArrow.png */,
+				4252940A174F607F0020AD39 /* blueArrow@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -228,8 +228,8 @@
 				423ED6B316CD4A9D00CB4B3E /* Default.png in Resources */,
 				423ED6B516CD4A9E00CB4B3E /* Default@2x.png in Resources */,
 				423ED6B716CD4A9E00CB4B3E /* Default-568h@2x.png in Resources */,
-				423ED6D916CD4AD900CB4B3E /* blueArrow.png in Resources */,
-				423ED6DA16CD4AD900CB4B3E /* blueArrow@2x.png in Resources */,
+				42529410174F607F0020AD39 /* blueArrow.png in Resources */,
+				42529411174F607F0020AD39 /* blueArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,11 +243,11 @@
 				423ED6AD16CD4A9D00CB4B3E /* main.m in Sources */,
 				423ED6B116CD4A9D00CB4B3E /* AppDelegate.m in Sources */,
 				423ED6BA16CD4A9E00CB4B3E /* ViewController.m in Sources */,
-				423ED6D416CD4AD900CB4B3E /* DragTableFooterView_ot.m in Sources */,
-				423ED6D516CD4AD900CB4B3E /* DragTableGestureObserver_ot.m in Sources */,
-				423ED6D616CD4AD900CB4B3E /* DragTableHeaderView_ot.m in Sources */,
-				423ED6D716CD4AD900CB4B3E /* UIScrollView+DragTableSafeAnimation.m in Sources */,
-				423ED6D816CD4AD900CB4B3E /* UITableView+DragLoad.m in Sources */,
+				4252940B174F607F0020AD39 /* DragTableFooterView_ot.m in Sources */,
+				4252940C174F607F0020AD39 /* DragTableGestureObserver_ot.m in Sources */,
+				4252940D174F607F0020AD39 /* DragTableHeaderView_ot.m in Sources */,
+				4252940E174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.m in Sources */,
+				4252940F174F607F0020AD39 /* UITableView+DragLoad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +358,7 @@
 				423ED6C216CD4A9E00CB4B3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
