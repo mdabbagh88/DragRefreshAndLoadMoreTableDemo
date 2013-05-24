@@ -13,6 +13,7 @@
 #import "DragTableGestureObserver_ot.h"
 
 #define DRAG_DELEGATE_KEY               @"ot_kUITableViewDragDelegate"
+#define DRAG_SHOULD_SHOW_REFRESH_KEY    @"ot_kUITableViewShouldShowRefresh"
 #define DRAG_SHOULD_SHOW_LOAD_MORE_KEY  @"ot_kUITableViewShouldShowLoadMore"
 
 #define DRAG_HEADER_KEY                 @"ot_kUITableViewDragHeader"
@@ -65,7 +66,10 @@
 {
     if (state == UIGestureRecognizerStateEnded)
     {
-        [self.dragHeaderView dragTableDidEndDragging:self];
+        if (self.shouldShowRefreshView)
+        {
+            [self.dragHeaderView dragTableDidEndDragging:self];
+        }
         if (self.shouldShowLoadMoreView)
         {
             [self.dragFooterView dragTableDidEndDragging:self];
@@ -75,7 +79,10 @@
 
 - (void)dragTableContentOffsetWillChangeTo:(CGPoint)contentOffset observer:(DragTableGestureObserver_ot *)observer
 {
-    [self.dragHeaderView dragTableDidScroll:self];
+    if (self.shouldShowRefreshView)
+    {
+        [self.dragHeaderView dragTableDidScroll:self];
+    }
     if (self.shouldShowLoadMoreView)
     {
         [self.dragFooterView dragTableDidScroll:self];
@@ -129,6 +136,19 @@
     }
 }
 
+- (BOOL)shouldShowRefreshView
+{
+    NSNumber *boolNumber = objc_getAssociatedObject(self, DRAG_SHOULD_SHOW_REFRESH_KEY);
+    return [boolNumber boolValue];
+}
+
+- (void)setShouldShowRefreshView:(BOOL)shouldShowRefreshView
+{
+    NSNumber *boolNumber = [NSNumber numberWithBool:shouldShowRefreshView];
+    objc_setAssociatedObject(self, DRAG_SHOULD_SHOW_REFRESH_KEY, boolNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    self.dragHeaderView.hidden = !shouldShowRefreshView;
+}
+
 - (BOOL)shouldShowLoadMoreView
 {
     NSNumber *boolNumber = objc_getAssociatedObject(self, DRAG_SHOULD_SHOW_LOAD_MORE_KEY);
@@ -164,6 +184,8 @@
     {
         self.gestureObserver = [[DragTableGestureObserver_ot alloc] initWithObservingTableView:self delegate:self];
     }
+
+    self.shouldShowRefreshView = YES;
     self.shouldShowLoadMoreView = YES;
 }
 

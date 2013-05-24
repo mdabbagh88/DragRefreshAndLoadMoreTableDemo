@@ -11,6 +11,7 @@
 
 @protocol UITableViewDragLoadDelegate <NSObject>
 
+@optional
 //Called when table trigger a refresh event.
 - (void)dragTableDidTriggerRefresh:(UITableView *)tableView;
 
@@ -35,6 +36,9 @@
 //When `dragDelegate` setted, the refresh header and load more footer will be init magically.
 //set `dragDelegate` to nil will remove refresh header and load more footer.
 - (void)setDragDelegate:(id<UITableViewDragLoadDelegate>)dragDelegate refreshDatePermanentKey:(NSString *)refreshDatePermanentKey;
+
+//If you want to hide refresh view, set this property to `NO`.
+@property (nonatomic, assign) BOOL shouldShowRefreshView;
 
 //If you want to hide load more view, set this property to `NO`.
 @property (nonatomic, assign) BOOL shouldShowLoadMoreView;
