@@ -31,6 +31,39 @@
 @synthesize pullDownText = _pullDownText, releaseText = _releaseText, loadingText = _loadingText;
 @synthesize dateFormatterText = _dateFormatterText, refreshDateFormatText = _refreshDateFormatText;
 
+#pragma mark - Text
+- (void)setPullDownText:(NSString *)pullDownText
+{
+    _pullDownText = pullDownText;
+    
+    //refresh status label immediately
+    self.state = self.state;
+}
+
+- (void)setReleaseText:(NSString *)releaseText
+{
+    _releaseText = releaseText;
+    
+    //refresh status label immediately
+    self.state = self.state;
+}
+
+- (void)setLoadingText:(NSString *)loadingText
+{
+    _loadingText = loadingText;
+    
+    //refresh status label immediately
+    self.state = self.state;
+}
+
+- (void)setRefreshDateFormatText:(NSString *)refreshDateFormatText
+{
+    _refreshDateFormatText = refreshDateFormatText;
+    
+    //refresh updated date label immediately
+    _lastUpdatedLabel.text = [self stringFromDate:_lastUpdateDate];
+}
+
 #pragma mark - UIs
 - (UILabel *)loadingStatusLabel
 {
@@ -139,6 +172,11 @@
     {
 		_lastUpdatedLabel.text = nil;
 	}
+}
+
+- (DragTableDragState_ot)state
+{
+    return _state;
 }
 
 - (void)setState:(DragTableDragState_ot)aState
@@ -260,6 +298,11 @@
 
 - (NSString *)stringFromDate:(NSDate *)date
 {
+    if (!date)
+    {
+        return @"";
+    }
+    
     if (!_dateFormatter)
     {
         _dateFormatter = [[NSDateFormatter alloc] init];
@@ -276,6 +319,9 @@
     {
         [_dateFormatter setDateFormat:dateFormatterText];
     }
+    
+    //refresh updated date label immediately
+    _lastUpdatedLabel.text = [self stringFromDate:_lastUpdateDate];
 }
 
 - (NSDate *)getStoredRefreshDate
