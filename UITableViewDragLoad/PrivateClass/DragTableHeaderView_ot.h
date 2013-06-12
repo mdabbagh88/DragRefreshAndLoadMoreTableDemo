@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) UILabel *loadingStatusLabel;
 @property (nonatomic, readonly) UILabel *refreshDateLabel;
 @property (nonatomic, readonly) UIActivityIndicatorView *loadingIndicator;
+@property (nonatomic, readonly) UIView *backgroundView;
 
 #pragma mark - Events
 

@@ -19,6 +19,8 @@
     
 	UILabel *_statusLabel;
 	UIActivityIndicatorView *_activityView;
+    
+    UIView *_backgroundView;
 }
 @synthesize isLoading = _isLoading;
 
@@ -28,9 +30,14 @@
     return _statusLabel;
 }
 
-- (UIView *)loadingIndicator
+- (UIActivityIndicatorView *)loadingIndicator
 {
     return _activityView;
+}
+
+- (UIView *)backgroundView
+{
+    return _backgroundView;
 }
 
 #pragma mark - Events
@@ -62,6 +69,9 @@
         _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 		_activityView.frame = CGRectMake(25.0f, 10.0f, 20.0f, 20.0f);
 		[self addSubview:_activityView];
+        
+        _backgroundView = [[UIView alloc] initWithFrame:self.bounds];
+        [self insertSubview:_backgroundView atIndex:0];
 		
 		[self setState:DragTableDragStateNormal_ot];
     }

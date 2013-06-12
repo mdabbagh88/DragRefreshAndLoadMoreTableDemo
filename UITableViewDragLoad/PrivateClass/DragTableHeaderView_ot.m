@@ -22,6 +22,8 @@
 	UILabel *_statusLabel;
 	CALayer *_arrowImage;
 	UIActivityIndicatorView *_activityView;
+    
+    UIView *_backgroundView;
 }
 @synthesize isLoading = _isLoading;
 
@@ -36,9 +38,14 @@
     return _lastUpdatedLabel;
 }
 
-- (UIView *)loadingIndicator
+- (UIActivityIndicatorView *)loadingIndicator
 {
     return _activityView;
+}
+
+- (UIView *)backgroundView
+{
+    return _backgroundView;
 }
 
 #pragma mark - Events
@@ -85,15 +92,20 @@
         _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 		_activityView.frame = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);
 		[self addSubview:_activityView];
+        
+        _backgroundView = [[UIView alloc] initWithFrame:self.bounds];
+        [self insertSubview:_backgroundView atIndex:0];
 		
 		[self setState:DragTableDragStateNormal_ot];
+        
+        [self adjustSubviewsFrame];
     }
     return self;
 }
 
-- (void)setFrame:(CGRect)frame
+- (void)adjustSubviewsFrame
 {
-    [super setFrame:frame];
+    CGRect frame = self.frame;
     _lastUpdatedLabel.frame = CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f);
     _statusLabel.frame = CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f);
     _arrowImage.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);

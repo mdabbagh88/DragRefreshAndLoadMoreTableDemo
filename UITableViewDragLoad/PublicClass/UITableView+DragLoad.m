@@ -344,23 +344,23 @@
     return nil;
 }
 
-//- (UIView *)headerBackgroundView
-//{
-//    if (self.dragDelegate)
-//    {
-//        
-//    }
-//    return nil;
-//}
-//
-//- (UIView *)footerBackgroundView
-//{
-//    if (self.dragDelegate)
-//    {
-//        
-//    }
-//    return nil;
-//}
+- (UIView *)headerBackgroundView
+{
+    if (self.dragDelegate)
+    {
+        return self.dragHeaderView.backgroundView;
+    }
+    return nil;
+}
+
+- (UIView *)footerBackgroundView
+{
+    if (self.dragDelegate)
+    {
+        return self.dragFooterView.backgroundView;
+    }
+    return nil;
+}
 
 ////Texts
 //@property (nonatomic, retain) NSString *headerPullDownText;//Default is "Pull down to refresh..."

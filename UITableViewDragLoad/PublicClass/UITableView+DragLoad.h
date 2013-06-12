@@ -74,9 +74,9 @@
 @property (nonatomic, readonly) UILabel *headerRefreshDateLabel;
 @property (nonatomic, readonly) UILabel *footerLoadingStatusLabel;
 
-//@property (nonatomic, readonly) UIView *headerBackgroundView;
-//@property (nonatomic, readonly) UIView *footerBackgroundView;
-//
+@property (nonatomic, readonly) UIView *headerBackgroundView;
+@property (nonatomic, readonly) UIView *footerBackgroundView;
+
 ////Texts
 //@property (nonatomic, retain) NSString *headerPullDownText;//Default is "Pull down to refresh..."
 //@property (nonatomic, retain) NSString *headerReleaseText;//Default is "Release to refresh..."
