@@ -25,6 +25,31 @@
 @synthesize isLoading = _isLoading;
 @synthesize pullUpText = _pullUpText, releaseText = _releaseText, loadingText = _loadingText;
 
+#pragma mark - Text
+- (void)setPullUpText:(NSString *)pullUpText
+{
+    _pullUpText = pullUpText;
+    
+    //refresh status label immediately
+    self.state = self.state;
+}
+
+- (void)setReleaseText:(NSString *)releaseText
+{
+    _releaseText = releaseText;
+    
+    //refresh status label immediately
+    self.state = self.state;
+}
+
+- (void)setLoadingText:(NSString *)loadingText
+{
+    _loadingText = loadingText;
+    
+    //refresh status label immediately
+    self.state = self.state;
+}
+
 #pragma mark - UIs
 - (UILabel *)loadingStatusLabel
 {
@@ -81,6 +106,11 @@
 		[self setState:DragTableDragStateNormal_ot];
     }
     return self;
+}
+
+- (DragTableDragState_ot)state
+{
+    return _state;
 }
 
 - (void)setState:(DragTableDragState_ot)aState
