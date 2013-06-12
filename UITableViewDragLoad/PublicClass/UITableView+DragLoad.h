@@ -34,7 +34,8 @@
 @property (nonatomic, readonly) id<UITableViewDragLoadDelegate> dragDelegate;
 
 //When `dragDelegate` setted, the refresh header and load more footer will be init magically.
-//set `dragDelegate` to nil will remove refresh header and load more footer.
+//Set `dragDelegate` to nil will remove refresh header and load more footer.
+//Generally, assign a unique `refreshDatePermanentKey` for each dragable UITableView. Or UITableViews use the same `refreshDatePermanentKey` will share refresh date.
 - (void)setDragDelegate:(id<UITableViewDragLoadDelegate>)dragDelegate refreshDatePermanentKey:(NSString *)refreshDatePermanentKey;
 
 //If you want to hide refresh view, set this property to `NO`.
