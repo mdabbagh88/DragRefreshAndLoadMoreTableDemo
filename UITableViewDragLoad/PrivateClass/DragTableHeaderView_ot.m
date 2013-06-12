@@ -24,9 +24,12 @@
 	UIActivityIndicatorView *_activityView;
     
     UIView *_backgroundView;
+    
+    NSDateFormatter *_dateFormatter;
 }
 @synthesize isLoading = _isLoading;
 @synthesize pullDownText = _pullDownText, releaseText = _releaseText, loadingText = _loadingText;
+@synthesize dateFormatterText = _dateFormatterText, refreshDateFormatText = _refreshDateFormatText;
 
 #pragma mark - UIs
 - (UILabel *)loadingStatusLabel
@@ -58,6 +61,8 @@
         self.releaseText = NSLocalizedString(@"Release to refresh...", @"Release to refresh status");
         self.pullDownText = NSLocalizedString(@"Pull down to refresh...", @"Pull down to refresh status");
         self.loadingText = NSLocalizedString(@"Loading...", @"Loading Status");
+        self.dateFormatterText = @"MM/dd/yyyy hh:mm:a";
+        self.refreshDateFormatText = @"Last Updated: %@";
         
         _isLoading = NO;
         _datePermanentStorageKey = [DATE_PERMANENT_STORAGE_KEY_PREFIX stringByAppendingString:datePermanentStoreKey];
@@ -126,7 +131,7 @@
     {
         if (_lastUpdateDate)
         {
-            _lastUpdatedLabel.text = [DragTableHeaderView_ot stringFromDate:_lastUpdateDate];
+            _lastUpdatedLabel.text = [self stringFromDate:_lastUpdateDate];
             [self storeRefreshDate:_lastUpdateDate];
         }
 	}
@@ -253,13 +258,24 @@
 	[self setState:DragTableDragStateNormal_ot];
 }
 
-+ (NSString *)stringFromDate:(NSDate *)date
+- (NSString *)stringFromDate:(NSDate *)date
 {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setAMSymbol:@"AM"];
-    [formatter setPMSymbol:@"PM"];
-    [formatter setDateFormat:@"MM/dd/yyyy hh:mm:a"];
-    return [NSString stringWithFormat:@"Last Updated: %@", [formatter stringFromDate:date]];
+    if (!_dateFormatter)
+    {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setDateFormat:self.dateFormatterText];
+    }
+
+    return [NSString stringWithFormat:self.refreshDateFormatText, [_dateFormatter stringFromDate:date]];
+}
+
+- (void)setDateFormatterText:(NSString *)dateFormatterText
+{
+    _dateFormatterText = dateFormatterText;
+    if (_dateFormatter)
+    {
+        [_dateFormatter setDateFormat:dateFormatterText];
+    }
 }
 
 - (NSDate *)getStoredRefreshDate

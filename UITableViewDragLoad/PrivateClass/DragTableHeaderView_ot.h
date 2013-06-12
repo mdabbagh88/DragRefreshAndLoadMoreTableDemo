@@ -23,6 +23,8 @@
 @property (nonatomic, retain) NSString *pullDownText;
 @property (nonatomic, retain) NSString *releaseText;
 @property (nonatomic, retain) NSString *loadingText;
+@property (nonatomic, retain) NSString *dateFormatterText;
+@property (nonatomic, retain) NSString *refreshDateFormatText;
 
 #pragma mark - UIs
 @property (nonatomic, readonly) UILabel *loadingStatusLabel;

@@ -86,4 +86,7 @@
 @property (nonatomic, retain) NSString *footerReleaseText;//Default is "Release to load more..."
 @property (nonatomic, retain) NSString *footerLoadingText;//Default is "Loading..."
 
+@property (nonatomic, retain) NSString *headerDateFormatText;//Default is "MM/dd/yyyy hh:mm:a"
+@property (nonatomic, retain) NSString *headerRefreshDateFormatText;//Default is "Last Updated: %@"
+
 @end

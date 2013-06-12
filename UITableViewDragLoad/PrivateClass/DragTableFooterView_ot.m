@@ -94,7 +94,7 @@
 			break;
 		case DragTableDragStateNormal_ot:
         {
-			_statusLabel.text = self.pullDownText;
+			_statusLabel.text = self.pullUpText;
 			[_activityView stopAnimating];
         }
 			break;

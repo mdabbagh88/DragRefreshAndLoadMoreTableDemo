@@ -423,5 +423,25 @@
     self.dragFooterView.loadingText = footerLoadingText;
 }
 
+- (NSString *)headerDateFormatText
+{
+    return self.dragHeaderView.dateFormatterText;
+}
+
+- (void)setHeaderDateFormatText:(NSString *)headerDateFormatText
+{
+    self.dragHeaderView.dateFormatterText = headerDateFormatText;
+}
+
+- (NSString *)headerRefreshDateFormatText
+{
+    return self.dragHeaderView.refreshDateFormatText;
+}
+
+- (void)setHeaderRefreshDateFormatText:(NSString *)headerRefreshDateFormatText
+{
+    self.dragHeaderView.refreshDateFormatText = headerRefreshDateFormatText;
+}
+
 @end
 
