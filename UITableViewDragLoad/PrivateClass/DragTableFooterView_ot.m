@@ -22,6 +22,19 @@
 }
 @synthesize isLoading = _isLoading;
 
+#pragma mark - UIs
+- (UILabel *)loadingStatusLabel
+{
+    return _statusLabel;
+}
+
+- (UIView *)loadingIndicator
+{
+    return _activityView;
+}
+
+#pragma mark - Events
+
 - (CGFloat)footerVisbleHeightInScrollView:(UIScrollView *)scrollView
 {
     return CGRectGetHeight(scrollView.frame) - (CGRectGetMinY(self.frame) - scrollView.contentOffset.y);

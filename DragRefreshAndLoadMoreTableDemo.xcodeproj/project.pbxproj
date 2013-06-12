@@ -143,12 +143,12 @@
 			isa = PBXGroup;
 			children = (
 				425293FC174F607F0020AD39 /* DragTableDragState_ot.h */,
+				42529401174F607F0020AD39 /* DragTableHeaderView_ot.h */,
+				42529402174F607F0020AD39 /* DragTableHeaderView_ot.m */,
 				425293FD174F607F0020AD39 /* DragTableFooterView_ot.h */,
 				425293FE174F607F0020AD39 /* DragTableFooterView_ot.m */,
 				425293FF174F607F0020AD39 /* DragTableGestureObserver_ot.h */,
 				42529400174F607F0020AD39 /* DragTableGestureObserver_ot.m */,
-				42529401174F607F0020AD39 /* DragTableHeaderView_ot.h */,
-				42529402174F607F0020AD39 /* DragTableHeaderView_ot.m */,
 				42529403174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.h */,
 				42529404174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.m */,
 			);

@@ -21,6 +21,12 @@
 
 @interface DragTableFooterView_ot : UIView
 
+#pragma mark - UIs
+@property (nonatomic, readonly) UILabel *loadingStatusLabel;
+@property (nonatomic, readonly) UIActivityIndicatorView *loadingIndicator;
+
+#pragma mark - Events
+
 @property (nonatomic,assign) NSObject<DragTableFooterDelegate_ot> *delegate;
 @property (nonatomic,readonly) BOOL isLoading;
 

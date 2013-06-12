@@ -19,6 +19,13 @@
 
 @interface DragTableHeaderView_ot : UIView
 
+#pragma mark - UIs
+@property (nonatomic, readonly) UILabel *loadingStatusLabel;
+@property (nonatomic, readonly) UILabel *refreshDateLabel;
+@property (nonatomic, readonly) UIActivityIndicatorView *loadingIndicator;
+
+#pragma mark - Events
+
 - (id)initWithFrame:(CGRect)frame datePermanentStoreKey:(NSString *)datePermanentStoreKey;
 
 @property (nonatomic,assign) NSObject<DragTableHeaderDelegate_ot> *delegate;

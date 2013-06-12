@@ -25,6 +25,24 @@
 }
 @synthesize isLoading = _isLoading;
 
+#pragma mark - UIs
+- (UILabel *)loadingStatusLabel
+{
+    return _statusLabel;
+}
+
+- (UILabel *)refreshDateLabel
+{
+    return _lastUpdatedLabel;
+}
+
+- (UIView *)loadingIndicator
+{
+    return _activityView;
+}
+
+#pragma mark - Events
+
 - (id)initWithFrame:(CGRect)frame datePermanentStoreKey:(NSString *)datePermanentStoreKey
 {
     if (self = [super initWithFrame:frame])

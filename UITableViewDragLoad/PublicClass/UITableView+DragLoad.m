@@ -295,3 +295,81 @@
 }
 
 @end
+
+@implementation UITableView (DragLoadUI)
+
+//Sub controls
+- (UIActivityIndicatorView *)headerLoadingIndicator
+{
+    if (self.dragDelegate)
+    {
+        return self.dragHeaderView.loadingIndicator;
+    }
+    return nil;
+}
+
+- (UIActivityIndicatorView *)footerLoadingIndicator
+{
+    if (self.dragDelegate)
+    {
+        return self.dragFooterView.loadingIndicator;
+    }
+    return nil;
+}
+
+- (UILabel *)headerLoadingStatusLabel
+{
+    if (self.dragDelegate)
+    {
+        return self.dragHeaderView.loadingStatusLabel;
+    }
+    return nil;
+}
+
+- (UILabel *)headerRefreshDateLabel
+{
+    if (self.dragDelegate)
+    {
+        return self.dragHeaderView.refreshDateLabel;
+    }
+    return nil;
+}
+
+- (UILabel *)footerLoadingStatusLabel
+{
+    if (self.dragDelegate)
+    {
+        return self.dragFooterView.loadingStatusLabel;
+    }
+    return nil;
+}
+
+//- (UIView *)headerBackgroundView
+//{
+//    if (self.dragDelegate)
+//    {
+//        
+//    }
+//    return nil;
+//}
+//
+//- (UIView *)footerBackgroundView
+//{
+//    if (self.dragDelegate)
+//    {
+//        
+//    }
+//    return nil;
+//}
+
+////Texts
+//@property (nonatomic, retain) NSString *headerPullDownText;//Default is "Pull down to refresh..."
+//@property (nonatomic, retain) NSString *headerReleaseText;//Default is "Release to refresh..."
+//@property (nonatomic, retain) NSString *headerLoadingText;//Default is "Loading..."
+//
+//@property (nonatomic, retain) NSString *footerPullUpText;//Default is "Pull up to load more..."
+//@property (nonatomic, retain) NSString *footerReleaseText;//Default is "Release to load more..."
+//@property (nonatomic, retain) NSString *footerLoadingText;//Default is "Loading..."
+
+@end
+
