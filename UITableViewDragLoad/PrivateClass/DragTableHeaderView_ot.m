@@ -26,6 +26,7 @@
     UIView *_backgroundView;
 }
 @synthesize isLoading = _isLoading;
+@synthesize pullDownText = _pullDownText, releaseText = _releaseText, loadingText = _loadingText;
 
 #pragma mark - UIs
 - (UILabel *)loadingStatusLabel
@@ -54,6 +55,10 @@
 {
     if (self = [super initWithFrame:frame])
     {
+        self.releaseText = NSLocalizedString(@"Release to refresh...", @"Release to refresh status");
+        self.pullDownText = NSLocalizedString(@"Pull down to refresh...", @"Pull down to refresh status");
+        self.loadingText = NSLocalizedString(@"Loading...", @"Loading Status");
+        
         _isLoading = NO;
         _datePermanentStorageKey = [DATE_PERMANENT_STORAGE_KEY_PREFIX stringByAppendingString:datePermanentStoreKey];
         _lastUpdateDate = [self getStoredRefreshDate];
@@ -137,7 +142,7 @@
     {
 		case DragTableDragStatePulling_ot:
         {
-			_statusLabel.text = NSLocalizedString(@"Release to refresh...", @"Release to refresh status");
+			_statusLabel.text = self.releaseText;
 			[CATransaction begin];
 			[CATransaction setAnimationDuration:FLIP_ANIMATION_DURATION];
 			_arrowImage.transform = CATransform3DMakeRotation((M_PI / 180.0) * 180.0f, 0.0f, 0.0f, 1.0f);
@@ -153,7 +158,7 @@
 				_arrowImage.transform = CATransform3DIdentity;
 				[CATransaction commit];
 			}
-			_statusLabel.text = NSLocalizedString(@"Pull down to refresh...", @"Pull down to refresh status");
+			_statusLabel.text = self.pullDownText;
 			[_activityView stopAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
@@ -165,7 +170,7 @@
 			break;   
 		case DragTableDragStateLoading_ot:
         {
-			_statusLabel.text = NSLocalizedString(@"Loading...", @"Loading Status");
+			_statusLabel.text = self.loadingText;
 			[_activityView startAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 

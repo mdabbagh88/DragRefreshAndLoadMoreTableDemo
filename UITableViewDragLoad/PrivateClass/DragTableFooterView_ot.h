@@ -21,6 +21,11 @@
 
 @interface DragTableFooterView_ot : UIView
 
+#pragma mark - Texts
+@property (nonatomic, retain) NSString *pullUpText;
+@property (nonatomic, retain) NSString *releaseText;
+@property (nonatomic, retain) NSString *loadingText;
+
 #pragma mark - UIs
 @property (nonatomic, readonly) UILabel *loadingStatusLabel;
 @property (nonatomic, readonly) UIActivityIndicatorView *loadingIndicator;

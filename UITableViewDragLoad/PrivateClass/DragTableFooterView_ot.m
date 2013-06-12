@@ -23,6 +23,7 @@
     UIView *_backgroundView;
 }
 @synthesize isLoading = _isLoading;
+@synthesize pullUpText = _pullUpText, releaseText = _releaseText, loadingText = _loadingText;
 
 #pragma mark - UIs
 - (UILabel *)loadingStatusLabel
@@ -51,6 +52,10 @@
 {
     if (self = [super initWithFrame:frame])
     {
+        self.releaseText = NSLocalizedString(@"Release to load more...", @"Release to load more status");
+        self.pullUpText = NSLocalizedString(@"Pull up to load more...", @"Pull down to load more status");
+        self.loadingText = NSLocalizedString(@"Loading...", @"Loading Status");
+        
         _isLoading = NO;
         
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -84,18 +89,18 @@
     {
 		case DragTableDragStatePulling_ot:
         {
-			_statusLabel.text = NSLocalizedString(@"Release to load more...", @"Release to load more status");
+			_statusLabel.text = self.releaseText;
         }
 			break;
 		case DragTableDragStateNormal_ot:
         {
-			_statusLabel.text = NSLocalizedString(@"Pull up to load more...", @"Pull down to load more status");
+			_statusLabel.text = self.pullDownText;
 			[_activityView stopAnimating];
         }
 			break;
 		case DragTableDragStateLoading_ot:
         {
-			_statusLabel.text = NSLocalizedString(@"Loading...", @"Loading Status");
+			_statusLabel.text = self.loadingText;
 			[_activityView startAnimating];
         }
 			break;

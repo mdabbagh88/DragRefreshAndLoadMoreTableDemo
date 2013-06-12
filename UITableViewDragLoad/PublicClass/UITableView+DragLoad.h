@@ -77,13 +77,13 @@
 @property (nonatomic, readonly) UIView *headerBackgroundView;
 @property (nonatomic, readonly) UIView *footerBackgroundView;
 
-////Texts
-//@property (nonatomic, retain) NSString *headerPullDownText;//Default is "Pull down to refresh..."
-//@property (nonatomic, retain) NSString *headerReleaseText;//Default is "Release to refresh..."
-//@property (nonatomic, retain) NSString *headerLoadingText;//Default is "Loading..."
-//
-//@property (nonatomic, retain) NSString *footerPullUpText;//Default is "Pull up to load more..."
-//@property (nonatomic, retain) NSString *footerReleaseText;//Default is "Release to load more..."
-//@property (nonatomic, retain) NSString *footerLoadingText;//Default is "Loading..."
+//Texts
+@property (nonatomic, retain) NSString *headerPullDownText;//Default is "Pull down to refresh..."
+@property (nonatomic, retain) NSString *headerReleaseText;//Default is "Release to refresh..."
+@property (nonatomic, retain) NSString *headerLoadingText;//Default is "Loading..."
+
+@property (nonatomic, retain) NSString *footerPullUpText;//Default is "Pull up to load more..."
+@property (nonatomic, retain) NSString *footerReleaseText;//Default is "Release to load more..."
+@property (nonatomic, retain) NSString *footerLoadingText;//Default is "Loading..."
 
 @end

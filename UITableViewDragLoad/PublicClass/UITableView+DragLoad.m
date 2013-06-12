@@ -362,14 +362,66 @@
     return nil;
 }
 
-////Texts
-//@property (nonatomic, retain) NSString *headerPullDownText;//Default is "Pull down to refresh..."
-//@property (nonatomic, retain) NSString *headerReleaseText;//Default is "Release to refresh..."
-//@property (nonatomic, retain) NSString *headerLoadingText;//Default is "Loading..."
-//
-//@property (nonatomic, retain) NSString *footerPullUpText;//Default is "Pull up to load more..."
-//@property (nonatomic, retain) NSString *footerReleaseText;//Default is "Release to load more..."
-//@property (nonatomic, retain) NSString *footerLoadingText;//Default is "Loading..."
+//Texts
+- (NSString *)headerPullDownText
+{
+    return self.dragHeaderView.pullDownText;
+}
+
+- (void)setHeaderPullDownText:(NSString *)headerPullDownText
+{
+    self.dragHeaderView.pullDownText = headerPullDownText;
+}
+
+- (NSString *)headerReleaseText
+{
+    return self.dragHeaderView.releaseText;
+}
+
+- (void)setHeaderReleaseText:(NSString *)headerReleaseText
+{
+    self.dragHeaderView.releaseText = headerReleaseText;
+}
+
+- (NSString *)headerLoadingText
+{
+    return self.dragHeaderView.loadingText;
+}
+
+- (void)setHeaderLoadingText:(NSString *)headerLoadingText
+{
+    self.dragHeaderView.loadingText = headerLoadingText;
+}
+
+- (NSString *)footerPullUpText
+{
+    return self.dragFooterView.pullUpText;
+}
+
+- (void)setFooterPullUpText:(NSString *)footerPullUpText
+{
+    self.dragFooterView.pullUpText = footerPullUpText;
+}
+
+- (NSString *)footerReleaseText
+{
+    return self.dragFooterView.releaseText;
+}
+
+- (void)setFooterReleaseText:(NSString *)footerReleaseText
+{
+    self.dragFooterView.releaseText = footerReleaseText;
+}
+
+- (NSString *)footerLoadingText
+{
+    return self.dragFooterView.loadingText;
+}
+
+- (void)setFooterLoadingText:(NSString *)footerLoadingText
+{
+    self.dragFooterView.loadingText = footerLoadingText;
+}
 
 @end
 

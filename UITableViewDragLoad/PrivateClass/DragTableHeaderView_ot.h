@@ -19,6 +19,11 @@
 
 @interface DragTableHeaderView_ot : UIView
 
+#pragma mark - Texts
+@property (nonatomic, retain) NSString *pullDownText;
+@property (nonatomic, retain) NSString *releaseText;
+@property (nonatomic, retain) NSString *loadingText;
+
 #pragma mark - UIs
 @property (nonatomic, readonly) UILabel *loadingStatusLabel;
 @property (nonatomic, readonly) UILabel *refreshDateLabel;
