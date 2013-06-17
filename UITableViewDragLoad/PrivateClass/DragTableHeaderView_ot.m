@@ -104,7 +104,7 @@
         
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		self.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
-
+        
         _lastUpdatedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
 		_lastUpdatedLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		_lastUpdatedLabel.font = [UIFont systemFontOfSize:12.0f];
@@ -144,6 +144,12 @@
         [self adjustSubviewsFrame];
     }
     return self;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    [self adjustSubviewsFrame];
 }
 
 - (void)adjustSubviewsFrame
@@ -204,19 +210,19 @@
 			_statusLabel.text = self.pullDownText;
 			[_activityView stopAnimating];
 			[CATransaction begin];
-			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
+			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
 			_arrowImage.hidden = NO;
 			_arrowImage.transform = CATransform3DIdentity;
 			[CATransaction commit];
 			[self refreshLastUpdatedDate];
         }
-			break;   
+			break;
 		case DragTableDragStateLoading_ot:
         {
 			_statusLabel.text = self.loadingText;
 			[_activityView startAnimating];
 			[CATransaction begin];
-			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
+			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
 			_arrowImage.hidden = YES;
 			[CATransaction commit];
         }
@@ -288,7 +294,7 @@
         
         _isLoading = NO;
     }
-
+    
     if (shouldUpdate)
     {
         _lastUpdateDate = [NSDate date];
@@ -308,7 +314,7 @@
         _dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setDateFormat:self.dateFormatterText];
     }
-
+    
     return [NSString stringWithFormat:self.refreshDateFormatText, [_dateFormatter stringFromDate:date]];
 }
 
