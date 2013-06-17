@@ -66,11 +66,11 @@
 {
     if (state == UIGestureRecognizerStateEnded)
     {
-        if (self.shouldShowRefreshView)
+        if (self.showRefreshView)
         {
             [self.dragHeaderView dragTableDidEndDragging:self];
         }
-        if (self.shouldShowLoadMoreView)
+        if (self.showLoadMoreView)
         {
             [self.dragFooterView dragTableDidEndDragging:self];
         }
@@ -79,11 +79,11 @@
 
 - (void)dragTableContentOffsetWillChangeTo:(CGPoint)contentOffset observer:(DragTableGestureObserver_ot *)observer
 {
-    if (self.shouldShowRefreshView)
+    if (self.showRefreshView)
     {
         [self.dragHeaderView dragTableDidScroll:self];
     }
-    if (self.shouldShowLoadMoreView)
+    if (self.showLoadMoreView)
     {
         [self.dragFooterView dragTableDidScroll:self];
     }
@@ -116,7 +116,6 @@
 #pragma mark - Delegate
 
 @dynamic dragDelegate;
-@dynamic shouldShowLoadMoreView;
 
 - (id<UITableViewDragLoadDelegate>)dragDelegate
 {
@@ -136,26 +135,26 @@
     }
 }
 
-- (BOOL)shouldShowRefreshView
+- (BOOL)showRefreshView
 {
     NSNumber *boolNumber = objc_getAssociatedObject(self, DRAG_SHOULD_SHOW_REFRESH_KEY);
     return [boolNumber boolValue];
 }
 
-- (void)setShouldShowRefreshView:(BOOL)shouldShowRefreshView
+- (void)setShowRefreshView:(BOOL)shouldShowRefreshView
 {
     NSNumber *boolNumber = [NSNumber numberWithBool:shouldShowRefreshView];
     objc_setAssociatedObject(self, DRAG_SHOULD_SHOW_REFRESH_KEY, boolNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.dragHeaderView.hidden = !shouldShowRefreshView;
 }
 
-- (BOOL)shouldShowLoadMoreView
+- (BOOL)showLoadMoreView
 {
     NSNumber *boolNumber = objc_getAssociatedObject(self, DRAG_SHOULD_SHOW_LOAD_MORE_KEY);
     return [boolNumber boolValue];
 }
 
-- (void)setShouldShowLoadMoreView:(BOOL)shouldShowLoadMoreView
+- (void)setShowLoadMoreView:(BOOL)shouldShowLoadMoreView
 {
     NSNumber *boolNumber = [NSNumber numberWithBool:shouldShowLoadMoreView];
     objc_setAssociatedObject(self, DRAG_SHOULD_SHOW_LOAD_MORE_KEY, boolNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -185,8 +184,8 @@
         self.gestureObserver = [[DragTableGestureObserver_ot alloc] initWithObservingTableView:self delegate:self];
     }
 
-    self.shouldShowRefreshView = YES;
-    self.shouldShowLoadMoreView = YES;
+    self.showRefreshView = YES;
+    self.showLoadMoreView = YES;
 }
 
 - (void)destroySubViews

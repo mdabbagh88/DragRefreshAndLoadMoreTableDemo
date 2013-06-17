@@ -52,7 +52,7 @@
     _tableView.frame = CGRectMake(0, 0, 320, 460);
     _tableView.dataSource = self;
     [_tableView setDragDelegate:self refreshDatePermanentKey:@"FriendList"];
-    _tableView.shouldShowLoadMoreView = YES;
+    _tableView.showLoadMoreView = YES;
     [self.view addSubview:_tableView];
 }
 

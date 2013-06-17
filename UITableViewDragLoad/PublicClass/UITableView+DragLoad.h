@@ -39,10 +39,10 @@
 - (void)setDragDelegate:(id<UITableViewDragLoadDelegate>)dragDelegate refreshDatePermanentKey:(NSString *)refreshDatePermanentKey;
 
 //If you want to hide refresh view, set this property to `NO`.
-@property (nonatomic, assign) BOOL shouldShowRefreshView;
+@property (nonatomic, assign) BOOL showRefreshView;
 
 //If you want to hide load more view, set this property to `NO`.
-@property (nonatomic, assign) BOOL shouldShowLoadMoreView;
+@property (nonatomic, assign) BOOL showLoadMoreView;
 
 //Stop refresh programmatically. Will not change the refresh date.
 //For typical use, call this when refresh request canceled.
