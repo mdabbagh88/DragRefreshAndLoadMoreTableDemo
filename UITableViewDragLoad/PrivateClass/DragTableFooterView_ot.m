@@ -93,7 +93,7 @@
 		_statusLabel.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		_statusLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		_statusLabel.backgroundColor = [UIColor clearColor];
-		_statusLabel.textAlignment = UITextAlignmentCenter;
+		_statusLabel.textAlignment = NSTextAlignmentCenter;
 		[self addSubview:_statusLabel];
 		
         _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
