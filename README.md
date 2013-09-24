@@ -3,6 +3,14 @@ Under MIT lisence.
 
 Supports iOS4.3 - iOS7, tested in iOS4.3 - iOS7.0.
 
+![ScreenShot1](https://raw.github.com/OpenFibers/DragRefreshAndLoadMoreTableDemo/master/ScreenShot/ScreenShot1.png "Drag down to refresh 1")
+
+![ScreenShot2](https://raw.github.com/OpenFibers/DragRefreshAndLoadMoreTableDemo/master/ScreenShot/ScreenShot2.png "Drag down to refresh 2")
+
+![ScreenShot3](https://raw.github.com/OpenFibers/DragRefreshAndLoadMoreTableDemo/master/ScreenShot/ScreenShot3.png "Drag up to load more 1")
+
+![ScreenShot4](https://raw.github.com/OpenFibers/DragRefreshAndLoadMoreTableDemo/master/ScreenShot/ScreenShot4.png "Drag up to load more 2")
+
 Interface and delegate:
 
 ```
