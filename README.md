@@ -17,7 +17,15 @@ Supports iOS4.3 - iOS7, tested in iOS4.3 - iOS7.0.
 
 1. Copy UITableViewDragLoad folder to your project.
 2. \#import "UITableView+DragLoad.h"
-3. Init a `UITableView`, then set its `dragDelegate` property, implement methods in `UITableViewDragLoadDelegate`.
+3. Init a `UITableView`, then set its `dragDelegate` property, implement methods in `UITableViewDragLoadDelegate`. You should control your own data sources and request in this four callback methods:
+
+```
+- (void)dragTableDidTriggerRefresh:(UITableView *)tableView;
+- (void)dragTableRefreshCanceled:(UITableView *)tableView;
+- (void)dragTableDidTriggerLoadMore:(UITableView *)tableView;
+- (void)dragTableLoadMoreCanceled:(UITableView *)tableView;
+```
+
 4. Drag it.
 
 #Interface and delegate:
