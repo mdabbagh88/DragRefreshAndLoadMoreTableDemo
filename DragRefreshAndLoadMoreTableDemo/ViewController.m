@@ -30,6 +30,7 @@
 @interface ViewController ()<UITableViewDragLoadDelegate,UITableViewDataSource,FrameObservingViewDelegate>
 {
     UITableView *_tableView;
+    NSUInteger _dataCount;
 }
 @end
 
@@ -48,12 +49,30 @@
     frameObservingView.delegate = self;
     self.view = frameObservingView;
     
+    _dataCount = 10;
+    
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    _tableView.frame = CGRectMake(0, 0, 320, 460);
+    _tableView.frame = self.view.bounds;
     _tableView.dataSource = self;
     [_tableView setDragDelegate:self refreshDatePermanentKey:@"FriendList"];
     _tableView.showLoadMoreView = YES;
     [self.view addSubview:_tableView];
+}
+
+#pragma mark - Control datasource
+
+- (void)finishRefresh
+{
+    _dataCount = 10;
+    [_tableView finishRefresh];
+    [_tableView reloadData];
+}
+
+- (void)finishLoadMore
+{
+    _dataCount += 10;
+    [_tableView finishLoadMore];
+    [_tableView reloadData];
 }
 
 #pragma mark - Drag delegate methods
@@ -62,35 +81,35 @@
 {
     //send refresh request(generally network request) here
 
-    [_tableView performSelector:@selector(finishRefresh) withObject:nil afterDelay:2];
+    [self performSelector:@selector(finishRefresh) withObject:nil afterDelay:2];
 }
 
 - (void)dragTableRefreshCanceled:(UITableView *)tableView
 {
     //cancel refresh request(generally network request) here
 
-    [NSObject cancelPreviousPerformRequestsWithTarget:_tableView selector:@selector(finishRefresh) object:nil];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(finishRefresh) object:nil];
 }
 
 - (void)dragTableDidTriggerLoadMore:(UITableView *)tableView
 {
     //send load more request(generally network request) here
 
-    [_tableView performSelector:@selector(finishLoadMore) withObject:nil afterDelay:2];
+    [self performSelector:@selector(finishLoadMore) withObject:nil afterDelay:2];
 }
 
 - (void)dragTableLoadMoreCanceled:(UITableView *)tableView
 {
     //cancel load more request(generally network request) here
 
-    [NSObject cancelPreviousPerformRequestsWithTarget:_tableView selector:@selector(finishLoadMore) object:nil];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(finishLoadMore) object:nil];
 }
 
 #pragma mark - Dummy methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 15;
+    return _dataCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -101,6 +120,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
     return cell;
 }
 
