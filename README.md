@@ -1,7 +1,11 @@
+#DragRefreshAndLoadMoreTable
+
 Create 'pull down to refresh' and 'pull up to load more' table view with friendly interface.
 Under MIT lisence.
 
 Supports iOS4.3 - iOS7, tested in iOS4.3 - iOS7.0.
+
+#Screen shots
 
 ![ScreenShot1](https://raw.github.com/OpenFibers/DragRefreshAndLoadMoreTableDemo/master/ScreenShot/ScreenShot1.png "Drag down to refresh 1")
 
@@ -11,7 +15,14 @@ Supports iOS4.3 - iOS7, tested in iOS4.3 - iOS7.0.
 
 ![ScreenShot4](https://raw.github.com/OpenFibers/DragRefreshAndLoadMoreTableDemo/master/ScreenShot/ScreenShot4.png "Drag up to load more 2")
 
-Interface and delegate:
+#How to use
+
+1. Copy UITableViewDragLoad folder to your project.
+2. \#import "UITableView+DragLoad.h"
+3. Init a `UITableView`, then set its `dragDelegate` property, implement methods in `UITableViewDragLoadDelegate`.
+4. Drag it.
+
+#Interface and delegate:
 
 ```
 @protocol UITableViewDragLoadDelegate <NSObject>
