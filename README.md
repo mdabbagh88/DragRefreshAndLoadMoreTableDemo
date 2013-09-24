@@ -30,6 +30,11 @@ Then Drag it.
 
 #Interface and delegate:
 
+Control data sources and requests in delegate methods.
+Control layouts in `DragLoadUI` category methods.
+Control header/footer hide or show, stop or trigger load by code in `
+DragLoad` category methods.
+
 ```
 @protocol UITableViewDragLoadDelegate <NSObject>
 
