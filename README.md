@@ -26,7 +26,7 @@ Supports iOS4.3 - iOS7, tested in iOS4.3 - iOS7.0.
 - (void)dragTableLoadMoreCanceled:(UITableView *)tableView;
 ```
 
-4. Drag it.
+Then Drag it.
 
 #Interface and delegate:
 
