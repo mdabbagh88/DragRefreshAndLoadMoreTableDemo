@@ -3,7 +3,7 @@
 Create 'pull down to refresh' and 'pull up to load more' table view with friendly interface.
 Under MIT lisence.
 
-Supports iOS4.3 - iOS7, tested in iOS4.3 - iOS7.0.
+Supports iOS4.3 - iOS7, tested in SDK6.1 - SDK7, runtime iOS4.3 - iOS7.0.
 
 #Screen shots
 
