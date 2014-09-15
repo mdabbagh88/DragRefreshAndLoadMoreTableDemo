@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A95AD9F19C6B83300A09639 /* ComOpenThreadOTScreenshotHelperSwizzleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A95AD9E19C6B83300A09639 /* ComOpenThreadOTScreenshotHelperSwizzleHelper.m */; };
 		423ED6A116CD4A9D00CB4B3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423ED6A016CD4A9D00CB4B3E /* UIKit.framework */; };
 		423ED6A316CD4A9D00CB4B3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423ED6A216CD4A9D00CB4B3E /* Foundation.framework */; };
 		423ED6A516CD4A9D00CB4B3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423ED6A416CD4A9D00CB4B3E /* CoreGraphics.framework */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A95AD9D19C6B83300A09639 /* ComOpenThreadOTScreenshotHelperSwizzleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComOpenThreadOTScreenshotHelperSwizzleHelper.h; sourceTree = "<group>"; };
+		0A95AD9E19C6B83300A09639 /* ComOpenThreadOTScreenshotHelperSwizzleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComOpenThreadOTScreenshotHelperSwizzleHelper.m; sourceTree = "<group>"; };
 		423ED69C16CD4A9D00CB4B3E /* DragRefreshAndLoadMoreTableDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragRefreshAndLoadMoreTableDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423ED6A016CD4A9D00CB4B3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		423ED6A216CD4A9D00CB4B3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +154,8 @@
 				42529400174F607F0020AD39 /* DragTableGestureObserver_ot.m */,
 				42529403174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.h */,
 				42529404174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.m */,
+				0A95AD9D19C6B83300A09639 /* ComOpenThreadOTScreenshotHelperSwizzleHelper.h */,
+				0A95AD9E19C6B83300A09639 /* ComOpenThreadOTScreenshotHelperSwizzleHelper.m */,
 			);
 			path = PrivateClass;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				4252940D174F607F0020AD39 /* DragTableHeaderView_ot.m in Sources */,
 				4252940E174F607F0020AD39 /* UIScrollView+DragTableSafeAnimation.m in Sources */,
 				4252940F174F607F0020AD39 /* UITableView+DragLoad.m in Sources */,
+				0A95AD9F19C6B83300A09639 /* ComOpenThreadOTScreenshotHelperSwizzleHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
