@@ -11,6 +11,7 @@
 #import "DragTableHeaderView_ot.h"
 #import "DragTableFooterView_ot.h"
 #import "DragTableGestureObserver_ot.h"
+#import "ComOpenThreadOTScreenshotHelperSwizzleHelper.h"
 
 #define DRAG_DELEGATE_KEY               @"ot_kUITableViewDragDelegate"
 #define DRAG_SHOULD_SHOW_REFRESH_KEY    @"ot_kUITableViewShouldShowRefresh"
@@ -122,12 +123,24 @@
     return objc_getAssociatedObject(self, DRAG_DELEGATE_KEY);
 }
 
+- (void)deallocSwizz
+{
+    [self destroySubViews];
+    [self deallocSwizz];
+}
+
 - (void)setDragDelegate:(id<UITableViewDragLoadDelegate>)dragDelegate refreshDatePermanentKey:(NSString *)refreshDatePermanentKey
 {
     objc_setAssociatedObject(self, DRAG_DELEGATE_KEY, dragDelegate, OBJC_ASSOCIATION_ASSIGN);
     if (dragDelegate)
     {
         [self initSubViewsWithRefreshDatePermanentKey:refreshDatePermanentKey];
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            [ComOpenThreadOTScreenshotHelperSwizzleHelper swizzClass:[self class]
+                                                            selector:NSSelectorFromString(@"dealloc")
+                                                            selector:@selector(deallocSwizz)];
+        });
     }
     if (!dragDelegate)
     {
