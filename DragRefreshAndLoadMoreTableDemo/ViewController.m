@@ -120,7 +120,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%zd", indexPath.row];
     return cell;
 }
 
