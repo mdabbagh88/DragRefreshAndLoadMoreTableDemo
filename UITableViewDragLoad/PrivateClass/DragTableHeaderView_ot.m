@@ -98,7 +98,7 @@
         self.refreshDateFormatText = @"Last Updated: %@";
         
         _isLoading = NO;
-        _datePermanentStorageKey = [DATE_PERMANENT_STORAGE_KEY_PREFIX stringByAppendingString:datePermanentStoreKey];
+        _datePermanentStorageKey = datePermanentStoreKey ? [DATE_PERMANENT_STORAGE_KEY_PREFIX stringByAppendingString:datePermanentStoreKey] : DATE_PERMANENT_STORAGE_KEY_PREFIX;
         _lastUpdateDate = [self getStoredRefreshDate];
         self.shouldShowDate = YES;
         
