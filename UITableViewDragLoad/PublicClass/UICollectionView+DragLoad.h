@@ -39,10 +39,10 @@
 - (void)setDragDelegate:(id<UICollectionViewDragLoadDelegate>)dragDelegate refreshDatePermanentKey:(NSString *)refreshDatePermanentKey;
 
 //If you want to hide refresh view, set this property to `NO`.
-@property (nonatomic, assign) BOOL showRefreshView;
+@property (nonatomic, assign) IBInspectable BOOL showRefreshView;
 
 //If you want to hide load more view, set this property to `NO`.
-@property (nonatomic, assign) BOOL showLoadMoreView;
+@property (nonatomic, assign) IBInspectable BOOL showLoadMoreView;
 
 //Stop refresh programmatically. Will not change the refresh date.
 //For typical use, call this when refresh request canceled.
